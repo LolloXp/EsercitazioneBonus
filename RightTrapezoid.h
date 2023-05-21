@@ -1,8 +1,7 @@
 #pragma once
 /** @file RightTrapezoid.h
-	\brief Declaration of the general class RightTrapezoid
-	@Luigi Thea
-	@Lorenzo Pitzalis
+	\brief Declaration of the general class RightTrapezoid by Lorenzo Pitzalis and Luigi Thea 
+	
 */
 
 #ifndef RIGHTTRAPEZOID_H
@@ -16,10 +15,10 @@ using namespace std;
 /// @class RightTrapezoid
 /// @brief an abstract base class for polygons
 class RightTrapezoid :public Polygon {
-protected:
+private:
 	float perimeter;
 	float area;
-	float b1, b2, h;
+	float BottomSide, TopSide, Height;
 	
 	float Area();
 	float Perimeter();
@@ -29,6 +28,7 @@ public:
 	/// @name CONSTRUCTORS/DESTRUCTOR
 	/// @{
 	RightTrapezoid();
+	RightTrapezoid(float BS, float TS, float H);
 	RightTrapezoid(const RightTrapezoid& p);
 	virtual ~RightTrapezoid();
 	/// @}
@@ -46,23 +46,36 @@ public:
 	void Reset();
 	/// @}
 
+	/// @name SETTERS
+	/// @{
+	void SetBottomSide(float BS);
+	void SetTopSide(float TS);
+	void SetHeight(float H);
+	void SetDim(float BS, float TS, float H);
+	/// @}
 
 	/// @name GETTERS
 	/// @{
-	float GetValue();
 	float GetArea();
 	float GetPerimeter();
+
+	float GetSide();
+	float GetBottomSide();
+	float GetTopSide();
+	float GetHeight();
+	void GetDim(float& BS, float& TS, float& H);
 	/// @}
 
 	/// @name DRAWING
 	/// @{
-	virtual void Draw() = 0;
+	virtual void Draw();
 	/// @}
 
 	/// @name DEBUG and SERIALIZATION 
 	/// @{
 	void ErrorMessage(const char* string);
 	void WarningMessage(const char* string);
+	int Check();
 	void Dump();
 	/// @}
 

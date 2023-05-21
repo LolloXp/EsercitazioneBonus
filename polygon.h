@@ -1,7 +1,7 @@
 /** @file poligon.h
 	\brief Declaration of the general class Polygon
-	@Luigi Thea
-	@Lorenzo Pitzalis
+	Luigi Thea
+	Lorenzo Pitzalis
 */
 
 #ifndef POLYGON_H
@@ -59,7 +59,7 @@ public:
 	/// @{
 	void ErrorMessage(const char *string); 
 	void WarningMessage(const char *string);
-	void Dump();
+	virtual void Dump();
 	/// @}
 
 };
