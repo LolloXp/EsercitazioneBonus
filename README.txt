@@ -13,7 +13,7 @@ A) In the first interface:
 	5- Exit without drawing
 B) In the second interface:
 	1- Choose the measures of the poltgon
-	2- Use default measures (Pre-written measues)
+	2- Use default measures (Pre-written measures)
 
 If you type invalid values the program will display an error message and the code wwill ask you to type it again.
 
